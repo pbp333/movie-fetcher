@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Movie {
 
-    private final String poster;
+    private final String posterPath;
     private final boolean adult;
     private final String overview;
     private final LocalDateTime releaseDate;
@@ -20,7 +20,7 @@ public class Movie {
     private final BigDecimal voteAverage;
 
     private Movie(Builder builder) {
-        this.poster = builder.poster;
+        this.posterPath = builder.posterPath;
         this.adult = builder.adult;
         this.overview = builder.overview;
         this.releaseDate = builder.releaseDate;
@@ -33,8 +33,8 @@ public class Movie {
         this.voteAverage = builder.voteAverage;
     }
 
-    public String getPoster() {
-        return poster;
+    public String getPosterPath() {
+        return posterPath;
     }
 
     public boolean isAdult() {
@@ -79,7 +79,7 @@ public class Movie {
 
 
     public static final class Builder {
-        private String poster;
+        private String posterPath;
         private boolean adult;
         private String overview;
         private LocalDateTime releaseDate;
@@ -98,8 +98,8 @@ public class Movie {
             return new Builder();
         }
 
-        public Builder poster(String poster) {
-            this.poster = poster;
+        public Builder posterPath(String posterPath) {
+            this.posterPath = posterPath;
             return this;
         }
 
