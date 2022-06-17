@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/movies")
+@RequestMapping(value = "/trending")
 public class MovieController {
 
     private final MovieFetcher fetcher;
@@ -20,10 +20,8 @@ public class MovieController {
         this.fetcher = fetcher;
     }
 
-    @GetMapping("/trending/week")
+    @GetMapping("/movie/day")
     public List<Movie> getTrendingByWeek() {
         return fetcher.fetchMoviesByWeek();
     }
-
-
 }

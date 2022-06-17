@@ -1,13 +1,12 @@
 package com.moviefetcher.infrastructure.tmdb;
 
-import com.moviefetcher.infrastructure.tmdb.json.TmdbGenreResponse;
+import com.moviefetcher.infrastructure.tmdb.json.TmdbMovie;
 import com.moviefetcher.infrastructure.tmdb.json.TmdbTrending;
+
+import java.util.List;
 
 public interface TmdbClient {
 
-    TmdbTrending fetchTrendingByWeek();
-
-    TmdbGenreResponse getGenres();
-
+    List<TmdbMovie> fetchTrendingByWeek();
 
 }

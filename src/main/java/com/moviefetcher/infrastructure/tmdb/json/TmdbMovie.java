@@ -8,20 +8,20 @@ import java.util.List;
 
 public class TmdbMovie {
 
-    @JsonProperty("posterPath")
+    private int id;
+    @JsonProperty("backdrop_path")
+    private String backDropPath;
+    @JsonProperty("poster_path")
     private String posterPath;
-    private boolean adult;
     private String overview;
-    @JsonProperty("release_date")
-    private String releaseDate;
     @JsonProperty("genre_ids")
     private List<Integer> genres = new ArrayList<>();
     @JsonProperty("original_title")
     private String originalTitle;
-    @JsonProperty("original_language")
-    private String originalLanguage;
+    private String name;
+    @JsonProperty("original_name")
+    private String originalName;
     private String title;
-    private BigDecimal popularity;
     @JsonProperty("vote_count")
     private int voteCount;
     @JsonProperty("vote_average")
@@ -29,6 +29,22 @@ public class TmdbMovie {
 
     public TmdbMovie() {
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getBackDropPath() {
+        return backDropPath;
+    }
+
+    public void setBackDropPath(String backDropPath) {
+        this.backDropPath = backDropPath;
     }
 
     public String getPosterPath() {
@@ -39,28 +55,12 @@ public class TmdbMovie {
         this.posterPath = posterPath;
     }
 
-    public boolean isAdult() {
-        return adult;
-    }
-
-    public void setAdult(boolean adult) {
-        this.adult = adult;
-    }
-
     public String getOverview() {
         return overview;
     }
 
     public void setOverview(String overview) {
         this.overview = overview;
-    }
-
-    public String getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
     }
 
     public List<Integer> getGenres() {
@@ -79,12 +79,20 @@ public class TmdbMovie {
         this.originalTitle = originalTitle;
     }
 
-    public String getOriginalLanguage() {
-        return originalLanguage;
+    public String getName() {
+        return name;
     }
 
-    public void setOriginalLanguage(String originalLanguage) {
-        this.originalLanguage = originalLanguage;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getOriginalName() {
+        return originalName;
+    }
+
+    public void setOriginalName(String originalName) {
+        this.originalName = originalName;
     }
 
     public String getTitle() {
@@ -93,14 +101,6 @@ public class TmdbMovie {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public BigDecimal getPopularity() {
-        return popularity;
-    }
-
-    public void setPopularity(BigDecimal popularity) {
-        this.popularity = popularity;
     }
 
     public int getVoteCount() {
