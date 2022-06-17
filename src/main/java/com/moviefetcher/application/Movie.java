@@ -1,7 +1,7 @@
 package com.moviefetcher.application;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +10,8 @@ public class Movie {
     private final String posterPath;
     private final boolean adult;
     private final String overview;
-    private final LocalDateTime releaseDate;
-    private final List<Integer> genres = new ArrayList<>();
+    private final LocalDate releaseDate;
+    private final List<String> genres = new ArrayList<>();
     private final String originalTitle;
     private final String originalLanguage;
     private final String title;
@@ -45,11 +45,11 @@ public class Movie {
         return overview;
     }
 
-    public LocalDateTime getReleaseDate() {
+    public LocalDate getReleaseDate() {
         return releaseDate;
     }
 
-    public List<Integer> getGenres() {
+    public List<String> getGenres() {
         return genres;
     }
 
@@ -82,8 +82,8 @@ public class Movie {
         private String posterPath;
         private boolean adult;
         private String overview;
-        private LocalDateTime releaseDate;
-        private List<Integer> genres = new ArrayList<>();
+        private LocalDate releaseDate;
+        private List<String> genres = new ArrayList<>();
         private String originalTitle;
         private String originalLanguage;
         private String title;
@@ -113,12 +113,12 @@ public class Movie {
             return this;
         }
 
-        public Builder releaseDate(LocalDateTime releaseDate) {
+        public Builder releaseDate(LocalDate releaseDate) {
             this.releaseDate = releaseDate;
             return this;
         }
 
-        public Builder genres(List<Integer> genres) {
+        public Builder genres(List<String> genres) {
             this.genres = genres;
             return this;
         }

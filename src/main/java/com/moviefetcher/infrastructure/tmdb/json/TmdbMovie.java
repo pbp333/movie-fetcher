@@ -3,7 +3,6 @@ package com.moviefetcher.infrastructure.tmdb.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class TmdbMovie {
     private boolean adult;
     private String overview;
     @JsonProperty("release_date")
-    private LocalDateTime releaseDate;
+    private String releaseDate;
     @JsonProperty("genre_ids")
     private List<Integer> genres = new ArrayList<>();
     @JsonProperty("original_title")
@@ -56,11 +55,11 @@ public class TmdbMovie {
         this.overview = overview;
     }
 
-    public LocalDateTime getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(LocalDateTime releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 

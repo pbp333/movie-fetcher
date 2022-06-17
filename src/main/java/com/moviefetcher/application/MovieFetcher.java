@@ -4,7 +4,6 @@ import java.util.List;
 
 public interface MovieFetcher {
 
-    List<Movie> fetchMovies(int numberOfMovies);
-
+    List<Movie> fetchMoviesByWeek();
 
 }
