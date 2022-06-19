@@ -38,8 +38,8 @@ public class TmdbClientImpl implements TmdbClient {
 
         List<TmdbMovie> results = new ArrayList<>();
 
-        for (int i = 0; i < NUMBER_OF_REQUESTS; i++) {
-            results.addAll(restTemplate.getForEntity(BASE_URL + TRENDING_WEEK_URL + apiKeyQueryParam, TmdbTrending.class)
+        for (int i = 1; i <= NUMBER_OF_REQUESTS; i++) {
+            results.addAll(restTemplate.getForEntity(BASE_URL + TRENDING_WEEK_URL + apiKeyQueryParam + PAGE_PLACEHOLDER + i, TmdbTrending.class)
                     .getBody().getResults());
 
         }

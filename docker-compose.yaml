@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  movie-infographic:
+  movie-fetcher:
     build:
       context: .
     ports:
