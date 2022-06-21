@@ -6,16 +6,6 @@ pipeline {
         }
     }
     stages {
-        stage('configFile Plugin') {
-            steps {
-                configFileProvider([configFile(fileId: '003c15d9-32f5-4f03-b320-1ea95c142320', variable: 'APPLICATION_PROPERTIES')]) {
-                    echo " =========== ^^^^^^^^^^^^ Reading config from pipeline script "
-                    sh "touch application.properties"
-                    sh "cat ${env.APPLICATION_PROPERTIES} > application.properties"
-                    echo " =========== ~~~~~~~~~~~~ ============ "
-                }
-            }
-        }
         stage('Build') {
             environment {
                 HOME="."
